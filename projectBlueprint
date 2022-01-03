@@ -1,0 +1,50 @@
+1. Game Layout
+    a. game menu(start screen)
+    b. 5 Levels (every 2 levels board, background, soundtrack, will change)
+    c. player will have 3 lives
+    d. win screen 'You survived' (continues to next level)
+    e. loose screen 'you died' (ends game)
+    f. rules screen
+    g. winners screen (beat game)
+    h. Play screen/board
+
+
+2. Title/Game menu/start screen
+    a. Title will be named Simon Says.
+    b. Game menu will fade out upon start.
+    c. Game menu will have a background along with background music.
+    d. Game menu will have a start 'Button' 
+    e. Once user clicks start, 'Or Else. . .' will be added to Title Name
+    f. Start button will have a unique shape
+    g. Game will have an overall tetris/retro/geometry/colorfull theme
+        2.a. Title(Simon says)
+                a. title will be colored text
+                b. Once button is clicked title will read 'Simon Says OR ELSE. . .'
+                c. Title will be placed at the top of the screen centered
+                d. Title will say 'Simon Says'
+        2.d. Button
+                a. button will placed just below the middle of screen(game board) centered
+                b. button will say 'PLAY'
+                c. button will make sound once clicked
+                d. upon click, it will add text 'OR ELSE. . .'
+        
+3. RULE MENU
+    a. list of rules
+    b. will have a button that reads 'Begin'
+    c. title will read 'RuleBook'
+    d. rule menu will have the same background and soundtrack as LVLs 1 and 2 except with a grey container
+
+4. PLAY MENU/BOARD
+    a. board will have a square center with a triangle on each side pointing outwards
+    b. board will change every 2 lvls 
+    c. triangles will be color coded and buttons
+    d. square will read either lvl, be blank, read message, or read whose turn it is 
+    c. play menu will display 3 lives on top right of screen, will be heart shaped
+
+5. LVLs 
+    a. There will be 5 Levels, having level 1 be the easiest and 5 be the hardest.
+    b. every 2 levels board, background, and soundtrack changes
+    c. there will be 4 set speeds normal, normal++, fast, fast++. lvl 5 will default to fast++
+    d. player has to win current lvl to continue to the next   
+
+        
