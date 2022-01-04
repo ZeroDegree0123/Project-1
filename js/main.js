@@ -58,36 +58,40 @@ function init() {
     computerSequence =  0;
     play =  true;
     result =  false;
-    gameInPlay =  true;
-    // render();
+    gameInPlay =  false;
 };
 
-// function render(cb) {
-//     isPlaying = true;
-//     let idx = 0;
-//     const timerId = setInterval(function() {
-//       const btn = buttons[idx];
-//       btn.style.opacity = 1;
-//       setTimeout(function() {
-//         btn.style.opacity = 0.5;
-//       }, LIT_TIME);
-//       idx++;
-//       if (idx === sequence.length) {
-//         clearInterval(timerId);
-//         isPlaying = false;
-//         setTimeout(cb, LIT_TIME);
-//       }
-//     }, LIT_TIME + GAP_TIME);
-//   }
 
 
 function handleClick(evt) {
     if (evt.target.tagName !== 'BUTTON') return;
-    itemClick = lightEls.target;
-    
+    startButton = evt.target.textContent.toLowerCase();
 
-
+    gameStart();
 }
 
 
+function gameStart() {
+    gameInPlay = true;
+    play = true;
 
+    render()
+}
+
+function render(cb) {
+    isPlaying = true;
+    let idx = 0;
+    const timerId = setInterval(function() {
+      const btn = buttons[idx];
+      btn.style.opacity = 1;
+      setTimeout(function() {
+        btn.style.opacity = 0.5;
+      }, LIT_TIME);
+      idx++;
+      if (idx === sequence.length) {
+        clearInterval(timerId);
+        isPlaying = false;
+        setTimeout(cb, LIT_TIME);
+      }
+    }, LIT_TIME + GAP_TIME);
+  }
