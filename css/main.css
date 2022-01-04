@@ -76,12 +76,9 @@ p {
     color: white;
 }  
 
-.light {
-    opacity: 50%;
-    
-}
 
 .triangle-red {
+    opacity: 50%;
    grid-area: 3 / 3 / 4 / 4;
    width: 0;
    height: 0;
@@ -94,6 +91,7 @@ p {
 }
 
 .triangle-blue {
+    opacity: 50%;
     grid-column-start: 3;
     grid-row-start: 5;
     width: 0;
@@ -107,6 +105,7 @@ p {
 }
 
 .triangle-green {
+    opacity: 50%;
     grid-column-start: 2;
     grid-row-start: 4;
     width: 0;
@@ -120,6 +119,7 @@ p {
 }
 
 .triangle-yellow {
+    opacity: 50%;
     grid-column-start: 4;
     grid-row-start: 4;
     width: 0;
@@ -132,7 +132,25 @@ p {
     background-size: auto;
 }
 
+.triangle-blue .light {
+opacity: 100%;
 
+}
+
+.triangle-red .light {
+opacity: 100%;
+
+}
+
+.triangle-green .light {
+opacity: 100%;
+
+}
+
+.triangle-yellow .light {
+opacity: 100%;
+
+}
 
 .triangle-orange {
     grid-row: 4;
@@ -145,6 +163,7 @@ p {
     background: url(https://imgur.com/NmzxIKb.gif);
     background-repeat: repeat;
     background-size: auto;
+    visibility: hidden;
 }
 
 
@@ -159,6 +178,7 @@ p {
     background: url(https://imgur.com/NmzxIKb.gif);
     background-repeat: repeat;
     background-size: auto;
+    visibility: hidden;
 }
 
 
@@ -174,6 +194,7 @@ p {
     background: url(https://imgur.com/NmzxIKb.gif);
     background-repeat: repeat;
     background-size: auto;
+    visibility: hidden;
 }
 
 
@@ -188,6 +209,7 @@ p {
     background: url(https://imgur.com/NmzxIKb.gif);
     background-repeat: repeat;
     background-size: auto;
+    visibility: hidden;
     
 }
 
