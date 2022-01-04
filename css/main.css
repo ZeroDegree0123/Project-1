@@ -76,6 +76,10 @@ p {
     color: white;
 }  
 
+.light {
+    opacity: 50%;
+    
+}
 
 .triangle-red {
    grid-area: 3 / 3 / 4 / 4;
