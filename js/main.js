@@ -16,7 +16,7 @@ let gameInPlay; // true when computer makes move
 
 
 /*----- cached element references -----*/
-const lightEls = Array.from(document.querySelectorAll('.main > div'));
+const lightEls = Array.from(document.querySelectorAll('h2 > div'));
 
 const startButton = document.querySelector('.replay');
 
@@ -41,7 +41,7 @@ const standard = function() {
 
 /*----- event listeners -----*/
 
-startButton.addEventListener('click', function(evt) {
+startButton.addEventListener('click', function() {
     start = true;
     gameOver = false;
     if (!start) return;
@@ -51,7 +51,7 @@ startButton.addEventListener('click', function(evt) {
     computerTurn();
 });
 
-document.getElementById('butt')
+document.querySelector('h2')
     .addEventListener('click', function(evt) {
         if (!start || gameInPlay) return;
         const button = evt.target;
@@ -84,11 +84,10 @@ function init() {
 
 function gameStart() {
     gameInPlay = true;
-    
     standard();
 }
 
-function render(cb) {
+function render() {
     gameInPlay = true;
     let idx = 0;
     const timerId = setInterval(function() {
