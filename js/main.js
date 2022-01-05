@@ -19,7 +19,7 @@ const LEVEL_DEC_TIME = 500;
 
 let playerSequence; // holds player moves
 let computerSequence; // holds computer moves
-let start; // true once start button is clicked when computer
+let start; // true once start button is clicked when computer begins turn
 let result; // false when player looses
 let gameInPlay; // true when computer makes move
 
@@ -31,8 +31,8 @@ let gameInPlay; // true when computer makes move
 /*----- cached element references -----*/
 const lightEls = Array.from(document.querySelectorAll('section > div'));
 // const lightEls = document.querySelectorAll('section > button');
+let startButton = document.querySelector('.replay');
 
-let startButton = document.querySelector('.replay')
 
 
 
@@ -53,13 +53,41 @@ const standard = function() {
 
 
 /*----- event listeners -----*/
-document.querySelector('button')
-    .addEventListener('click', handleClick);
 
+startButton.addEventListener('click', function(evt) {
+    if (startButton.checked === true) {
+        gameStart();
+    } else {
+        init();
+    }
+    gameOver = false;
+    if (!start) return;
+    computerSequence = [];
+    playerSequence = [];
+    standard();
+    computerTurn();
+});
 
+document.querySelector('.main')
+    .addEventListener('click', function(evt) {
+        if (!start || gameInPlay) return;
+        const button = evt.target;
+        const buttonIndex = lightEls.indexOf(button);
+        if (buttonIndex === -1) return;
+        playerSequence.push(buttonIndex);
+        lightEls[buttonIndex].classList.add('light');
+        setTimeout(function() {
+            if (!result) lightEls[buttonIndex].classList.remove('light');
+        }, 200);
+        if (sequenceComplete()) {
+            computerTurn();
+        }else {
+            checkSequence();
+        }
+    })
 
 /*----- functions -----*/
-
+ 
 init();
 
 function init() {
@@ -75,52 +103,45 @@ function init() {
 };
 
 
-
-function handleClick(evt) {
-    if (evt.target.tagName !== 'BUTTON') return;
-    startButton = evt.target.textContent.toLowerCase();
-
-    gameStart();
-}
-
-
 function gameStart() {
     gameInPlay = true;
-    play = true;
+    startButton.checked = true;
+    gameInplay = true;
 
     standard()
-    render()
 }
 
 function render(cb) {
     gameInPlay = true;
     let idx = 0;
     const timerId = setInterval(function() {
-      const btn = lightEls[idx];
-      lightUp();
+      const btn = lightEls[computerSequence[idx]];
+      btn.classList.add('light');
       setTimeout(function() {
-        standard();
+        btn.classList.remove('light');
       }, LIT_TIME);
       idx++;
-      if (idx === lightEls.length) {
+      if (idx === computerSequence.length) {
         clearInterval(timerId);
         gameInPlay = false;
-        setTimeout(cb, LIT_TIME);
+        // setTimeout(cb, LIT_TIME);
       }
     }, LIT_TIME + GAP_TIME);
   }
 
 function lose() {
     lightUp();
+    result = true;
+
 
 }
 
 function computerTurn() {
     gameInPlay = true
     playerSequence = [];
-    computerSequence(Math.floor(Math.random() * 4));
+    computerSequence.push(Math.floor(Math.random() * 4));
 
-    playerTurn();
+    render();
 }
 
 function playerTurn() {
@@ -129,4 +150,14 @@ function playerTurn() {
     start = true;
 }
 
+function sequenceComplete() {
+    return JSON.stringify(playerSequence) === JSON.stringify(computerSequence);
+    standard();
+}
 
+
+function checkSequence() {
+    for (i = 0; i < playerSequence.length; i++) {
+        playerSequence[i] === computerSequence[i] ? true : lose();
+    }
+};
