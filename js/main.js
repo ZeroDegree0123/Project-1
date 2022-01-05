@@ -16,11 +16,11 @@ let gameInPlay; // true when computer makes move
 
 
 /*----- cached element references -----*/
-const lightEls = Array.from(document.querySelectorAll('h2 > div'));
+const lightEls = Array.from(document.querySelectorAll('div > div'));
 
-const startButton = document.querySelector('.replay');
+const startButton = document.querySelector('button');
 
-
+const messageBox = document.querySelector('p');
 
 
 
@@ -51,7 +51,7 @@ startButton.addEventListener('click', function() {
     computerTurn();
 });
 
-document.querySelector('h2')
+document.querySelector('.container')
     .addEventListener('click', function(evt) {
         if (!start || gameInPlay) return;
         const button = evt.target;
@@ -79,6 +79,7 @@ function init() {
     start =  false;
     result =  false;
     gameInPlay =  false;
+    messageBox.innerHTML = "Good Luck";
 };
 
 
@@ -108,7 +109,7 @@ function render() {
 function lose() {
     lightUp();
     result = true;
-
+    messageBox.innerHTML = "You Failed"
 
 }
 
@@ -116,7 +117,7 @@ function computerTurn() {
     gameInPlay = true
     playerSequence = [];
     computerSequence.push(Math.floor(Math.random() * 4));
-
+    messageBox.innerHTML = "(ㆆ_ㆆ)"
     render();
 }
 

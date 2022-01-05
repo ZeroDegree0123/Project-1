@@ -62,6 +62,7 @@ h1 > span {
 } */
 
 p {
+    display: flex;
     grid-area: 4 / 3 / 5 / 4;
     position: absolute;
     justify-self: center;
@@ -74,17 +75,27 @@ p {
     height: 150px;
     color: white;
     text-align: center;
-    
+    padding: 40px;
 }  
 
-h2 {
-    display: grid;
-    grid-template-rows: 100px 100px 150px 150px 150px 150px 150px;     
-    grid-template-columns: 150px 150px 150px 150px 150px;     
-    position: absolute;
+
+.replay {
+    grid-row: 6;
+    grid-column: 3;
+    width: 150px;
+    height: 50px;
+    background: whitesmoke;
+    border-radius: 100px / 50px;
     align-items: center;
     justify-content: center;
-    align-content: center;
+}
+.replay:active {
+    background-color: red;
+}
+
+.container {
+   justify-content: center;
+   unicode-bidi:isolate-override;
 }
 
 .triangle-red {
@@ -224,16 +235,7 @@ opacity: 100%;
     
 } */
 
-.replay {
-    grid-row: 6;
-    grid-column: 3;
-    width: 150px;
-    height: 50px;
-    background: whitesmoke;
-    border-radius: 100px / 50px;
-    align-items: center;
-    justify-content: center;
-}
+
 
 /* .level2 {
     background-color: orange;
