@@ -46,8 +46,6 @@ h1 {
     background: transparent;
     font-size: 60px;
     margin-left: 220px;
-    border: white;
-    border-width: 10px;
 }
 
 h1 > span {
@@ -136,22 +134,22 @@ p {
     
 }
 
-.triangle-blue .light {
+.triangle-blue.light {
     opacity: 100%;
 
 }
 
-.triangle-red .light {
+.triangle-red.light {
 opacity: 100%;
 
 }
 
-.triangle-green .light {
+.triangle-green.light {
 opacity: 100%;
 
 }
 
-.triangle-yellow .light {
+.triangle-yellow.light {
 opacity: 100%;
 
 }

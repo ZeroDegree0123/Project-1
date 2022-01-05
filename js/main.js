@@ -1,19 +1,10 @@
 /*----- constants -----*/
-// const lightChoices = [
-//     {color: 'blue', opacity: 1, time: 1000},
-//     {color: 'red', opacity: 1, time: 1000},
-//     {color: 'yellow', opacity: 1, time: 1000},
-//     {color: 'green', opacity: 1, time: 1000},
-//     {color: 'purple', opacity: 1, time: 1000},
-//     {color: 'orange', opacity: 1, time: 1000},
-//     {color: 'cyan', opacity: 1, time: 1000},
-//     {color: 'dark green', opacity: 1, time: 1000}
-// ]
-const BASE_LIT_TIME = 2000;
-let LIT_TIME;
-let GAP_TIME = 400;
-const LEVEL_JUMP = 2;
-const LEVEL_DEC_TIME = 500;
+
+// const BASE_LIT_TIME = 2000;
+const LIT_TIME = 1000;
+const GAP_TIME = 400;
+// const LEVEL_JUMP = 2;
+// const LEVEL_DEC_TIME = 500;
 
 /*----- app's state (variables) -----*/
 
@@ -24,14 +15,10 @@ let result; // false when player looses
 let gameInPlay; // true when computer makes move
 
 
-// let gameSquence; 
-// let playerMove;
-// let computerMove;
-
 /*----- cached element references -----*/
-const lightEls = Array.from(document.querySelectorAll('section > div'));
-// const lightEls = document.querySelectorAll('section > button');
-let startButton = document.querySelector('.replay');
+const lightEls = Array.from(document.querySelectorAll('.main > div'));
+
+const startButton = document.querySelector('.replay');
 
 
 
@@ -55,11 +42,7 @@ const standard = function() {
 /*----- event listeners -----*/
 
 startButton.addEventListener('click', function(evt) {
-    if (startButton.checked === true) {
-        gameStart();
-    } else {
-        init();
-    }
+    start = true;
     gameOver = false;
     if (!start) return;
     computerSequence = [];
@@ -68,7 +51,7 @@ startButton.addEventListener('click', function(evt) {
     computerTurn();
 });
 
-document.querySelector('.main')
+document.getElementById('butt')
     .addEventListener('click', function(evt) {
         if (!start || gameInPlay) return;
         const button = evt.target;
@@ -96,19 +79,13 @@ function init() {
     start =  false;
     result =  false;
     gameInPlay =  false;
-
-    // playerMove = [];
-    // computerMove = [];
-    // gameSequence = [0, 1, 2, 3];
 };
 
 
 function gameStart() {
     gameInPlay = true;
-    startButton.checked = true;
-    gameInplay = true;
-
-    standard()
+    
+    standard();
 }
 
 function render(cb) {
@@ -118,7 +95,7 @@ function render(cb) {
       const btn = lightEls[computerSequence[idx]];
       btn.classList.add('light');
       setTimeout(function() {
-        btn.classList.remove('light');
+        btn.classList.remove('light')
       }, LIT_TIME);
       idx++;
       if (idx === computerSequence.length) {
@@ -147,12 +124,12 @@ function computerTurn() {
 function playerTurn() {
     gameInPlay = false;
     playerSequence = [];
-    start = true;
+    start = false;
 }
 
 function sequenceComplete() {
     return JSON.stringify(playerSequence) === JSON.stringify(computerSequence);
-    standard();
+    standard()
 }
 
 
