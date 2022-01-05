@@ -9,7 +9,11 @@
 //     {color: 'cyan', opacity: 1, time: 1000},
 //     {color: 'dark green', opacity: 1, time: 1000}
 // ]
-
+const BASE_LIT_TIME = 2000;
+let LIT_TIME;
+let GAP_TIME = 400;
+const LEVEL_JUMP = 2;
+const LEVEL_DEC_TIME = 500;
 
 /*----- app's state (variables) -----*/
 
@@ -93,14 +97,14 @@ function render(cb) {
     let idx = 0;
     const timerId = setInterval(function() {
       const btn = lightEls[idx];
-      btn.style.opacity = 1;
+      lightUp();
       setTimeout(function() {
-        btn.style.opacity = 0.5;
+        standard();
       }, LIT_TIME);
       idx++;
-      if (idx === sequence.length) {
+      if (idx === lightEls.length) {
         clearInterval(timerId);
-        isPlaying = false;
+        gameInPlay = false;
         setTimeout(cb, LIT_TIME);
       }
     }, LIT_TIME + GAP_TIME);
