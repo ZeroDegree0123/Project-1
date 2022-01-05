@@ -15,16 +15,21 @@
 
 let playerSequence; // holds player moves
 let computerSequence; // holds computer moves
-let play; // true if pc turn
-let result; // false when player loose
-let gameInPlay; // true when game begins
+let start; // true once start button is clicked
+let result; // false when player looses
+let gameInPlay; // true when computer makes move
 
 
+// let gameSquence; 
+// let playerMove;
+// let computerMove;
 
 /*----- cached element references -----*/
 const lightEls = Array.from(document.querySelectorAll('section > button'));
+// const lightEls = document.querySelectorAll('section > button');
 
 const startButton = document.querySelector('.replay')
+
 
 
 
@@ -54,11 +59,15 @@ document.querySelector('button')
 init();
 
 function init() {
-    playerSequence =  0;
-    computerSequence =  0;
-    play =  true;
+    playerSequence =  [];
+    computerSequence =  [];
+    start =  false;
     result =  false;
     gameInPlay =  false;
+
+    // playerMove = [];
+    // computerMove = [];
+    // gameSequence = [0, 1, 2, 3];
 };
 
 
@@ -75,14 +84,15 @@ function gameStart() {
     gameInPlay = true;
     play = true;
 
+    standard()
     render()
 }
 
 function render(cb) {
-    isPlaying = true;
+    gameInPlay = true;
     let idx = 0;
     const timerId = setInterval(function() {
-      const btn = buttons[idx];
+      const btn = lightEls[idx];
       btn.style.opacity = 1;
       setTimeout(function() {
         btn.style.opacity = 0.5;
@@ -95,3 +105,18 @@ function render(cb) {
       }
     }, LIT_TIME + GAP_TIME);
   }
+
+function computerTurn() {
+    gameInPlay = true
+    playerSequence = [];
+    computerSequence(Math.floor(Math.random() * 4));
+
+    playerTurn();
+}
+
+function playerTurn() {
+    gameInPlay = false;
+    
+}
+
+
