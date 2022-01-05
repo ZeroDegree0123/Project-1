@@ -15,7 +15,7 @@
 
 let playerSequence; // holds player moves
 let computerSequence; // holds computer moves
-let start; // true once start button is clicked
+let start; // true once start button is clicked when computer
 let result; // false when player looses
 let gameInPlay; // true when computer makes move
 
@@ -25,10 +25,10 @@ let gameInPlay; // true when computer makes move
 // let computerMove;
 
 /*----- cached element references -----*/
-const lightEls = Array.from(document.querySelectorAll('section > button'));
+const lightEls = Array.from(document.querySelectorAll('section > div'));
 // const lightEls = document.querySelectorAll('section > button');
 
-const startButton = document.querySelector('.replay')
+let startButton = document.querySelector('.replay')
 
 
 
@@ -106,6 +106,11 @@ function render(cb) {
     }, LIT_TIME + GAP_TIME);
   }
 
+function lose() {
+    lightUp();
+
+}
+
 function computerTurn() {
     gameInPlay = true
     playerSequence = [];
@@ -116,7 +121,8 @@ function computerTurn() {
 
 function playerTurn() {
     gameInPlay = false;
-    
+    playerSequence = [];
+    start = true;
 }
 
 
