@@ -15,9 +15,9 @@ https://zerodegree0123.github.io/Project-1/
 
 
 ## Technologies Used
-JavaScript 
-CSS
- HTML
+*JavaScript 
+*CSS
+*HTML
 
 ## Next Steps 
     Further improvements I would like to add to this game
