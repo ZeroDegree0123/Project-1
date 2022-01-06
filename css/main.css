@@ -45,11 +45,12 @@ h1 {
     justify-self: center;
     background: transparent;
     font-size: 60px;
-    margin-left: 220px;
+    margin-left: 180px;
 }
 
 h1 > span {
-    visibility: hidden; 
+    visibility: hidden;
+    font-size: 30px; 
 } 
 
 /* h3 {
@@ -80,25 +81,32 @@ p {
 
 
 .replay {
+    color: white;
     position: absolute;
     grid-row: 6;
     grid-column: 3;
     width: 150px;
     height: 50px;
-    background: whitesmoke;
+    background: rgb(60, 9, 94);
     border-radius: 100px / 50px;
     align-items: center;
     justify-content: center;
 }
+
 .replay:active {
-    background-color: red;
+    background-color: rgb(235, 210, 74);
+    transform: scale(0.98);
+}
+
+.replay:hover {
+    transform: scale(0.98);
 }
 
 .container {
     display: grid;
     position: absolute;
     grid-template-rows: 100px 100px 150px 150px 150px 150px 150px;     
-    grid-template-columns: 150px 150px 150px 150px 150px;     
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;     
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -117,6 +125,10 @@ p {
    background-size: auto;
 }
 
+.triangle-red:hover {
+    transform: scale(0.97);
+}
+
 .triangle-blue {
     opacity: 50%;
     grid-column-start: 3;
@@ -129,6 +141,10 @@ p {
     background: url(https://imgur.com/NmzxIKb.gif);
     background-repeat: repeat;
     background-size: auto;
+}
+
+.triangle-blue:hover {
+    transform: scale(0.97);
 }
 
 .triangle-green {
@@ -145,6 +161,10 @@ p {
     background-size: auto;
 }
 
+.triangle-green:hover {
+    transform: scale(0.97);
+}
+
 .triangle-yellow {
     opacity: 50%;
     grid-column-start: 4;
@@ -158,6 +178,10 @@ p {
     background-repeat: repeat;
     background-size: auto;
     
+}
+
+.triangle-yellow:hover {
+    transform: scale(0.97);
 }
 
 .triangle-blue.light {

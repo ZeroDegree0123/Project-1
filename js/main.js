@@ -1,8 +1,8 @@
 /*----- constants -----*/
 
 // const BASE_LIT_TIME = 2000;
-const LIT_TIME = 1000;
-const GAP_TIME = 400;
+const LIT_TIME = 900;
+const GAP_TIME = 300;
 // const LEVEL_JUMP = 2;
 // const LEVEL_DEC_TIME = 500;
 
@@ -17,7 +17,7 @@ let gameInPlay; // true when computer makes move
 
 /*----- cached element references -----*/
 const lightEls = Array.from(document.querySelectorAll('div > div'));
-
+const addedText = document.querySelector('span')
 const startButton = document.querySelector('button');
 
 const messageBox = document.querySelector('p');
@@ -38,10 +38,15 @@ const standard = function() {
     lightEls[3].classList.remove('light')
 }
 
+
+
 const soundClips = [
-    new Audio ("/Users/zacharyvasquez/code/Project1/sounds/square-sound-free-download-scloudtomp3downloader.com.mp3")
-    // new Audio ("https://")
-    // new Audio ("https://")
+    new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"), 
+    new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
+    new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"),
+    new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"),
+    new Audio ("/Users/zacharyvasquez/code/Project1/sounds/square-sound-free-download-scloudtomp3downloader.com.mp3"),
+    new Audio ("/Users/zacharyvasquez/code/Project1/sounds/evil-laugh2-scloudtomp3downloader.com.mp3")
 ];
 /*----- event listeners -----*/
 
@@ -51,7 +56,11 @@ startButton.addEventListener('click', function() {
     if (!start) return;
     computerSequence = [];
     playerSequence = [];
-    soundClips[0]
+    addedText.style.visibility = 'visible';
+    soundClips[4].currentTime = 0.0;
+    soundClips[4].play();
+    soundClips[4].loop = true;
+    soundClips[4].volume = 0.09;
     standard();
     computerTurn();
 });
@@ -64,6 +73,7 @@ document.querySelector('.container')
         if (buttonIndex === -1) return;
         playerSequence.push(buttonIndex);
         lightEls[buttonIndex].classList.add('light');
+        soundClips[buttonIndex].play();
         setTimeout(function() {
             if (!result) lightEls[buttonIndex].classList.remove('light');
         }, 200);
@@ -84,7 +94,7 @@ function init() {
     start =  false;
     result =  false;
     gameInPlay =  false;
-    messageBox.innerHTML = "Good Luck";
+    messageBox.innerHTML = "Push Start To Begin";
 };
 
 
@@ -114,7 +124,10 @@ function render() {
 function lose() {
     lightUp();
     result = true;
-    messageBox.innerHTML = "You Failed"
+    soundClips[4].pause();
+    soundClips[5].play();
+    addedText.style.visibility = 'hidden';
+    messageBox.innerHTML = "You Died";
 
 }
 

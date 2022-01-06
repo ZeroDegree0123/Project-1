@@ -4,9 +4,8 @@
     c. player will have 3 lives
     d. win screen 'You survived' (continues to next level)
     e. loose screen 'you died' (ends game)
-    f. rules screen
-    g. winners screen (beat game)
-    h. Play screen/board
+    f. winners screen (beat game)
+    g. Play screen/board
 
 
 2. Title/Game menu/start screen
@@ -24,15 +23,14 @@
                 d. Title will say 'Simon Says'
         2.d. Button
                 a. button will placed just below the middle of screen(game board) centered
-                b. button will say 'PLAY'
+                b. button will say 'Start'
                 c. button will make sound once clicked
                 d. upon click, it will add text 'OR ELSE. . .'
         
-3. RULE MENU
-    a. list of rules
-    b. will have a button that reads 'Begin'
-    c. title will read 'RuleBook'
-    d. rule menu will have the same background and soundtrack as LVLs 1 and 2 except with a grey container
+3. ColorButtons
+    a. buttons will be divs shaped like triangles
+    b. buttons will be different colors with unique tones
+    c. will be placed below title
 
 4. PLAY MENU/BOARD
     a. board will have a square center with a triangle on each side pointing outwards
@@ -47,4 +45,8 @@
     c. there will be 4 set speeds normal, normal++, fast, fast++. lvl 5 will default to fast++
     d. player has to win current lvl to continue to the next   
 
+6. Message Box
+    a. be a square shape 
+    b. will display three messages on (before start, on start, and when lose)
+    
         
