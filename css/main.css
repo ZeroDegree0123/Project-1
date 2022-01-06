@@ -93,9 +93,8 @@ p {
     background-color: red;
 }
 
-.container {
-   justify-content: center;
-   unicode-bidi:isolate-override;
+.container:nth-child(4) {
+   grid-area: 3 / 3 / 4 / 4;
 }
 
 .triangle-red {

@@ -38,7 +38,11 @@ const standard = function() {
     lightEls[3].classList.remove('light')
 }
 
-
+const soundClips = [
+    new Audio ("/Users/zacharyvasquez/code/Project1/sounds/square-sound-free-download-scloudtomp3downloader.com.mp3")
+    // new Audio ("https://")
+    // new Audio ("https://")
+];
 /*----- event listeners -----*/
 
 startButton.addEventListener('click', function() {
@@ -47,6 +51,7 @@ startButton.addEventListener('click', function() {
     if (!start) return;
     computerSequence = [];
     playerSequence = [];
+    soundClips[0]
     standard();
     computerTurn();
 });
