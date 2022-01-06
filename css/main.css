@@ -80,6 +80,7 @@ p {
 
 
 .replay {
+    position: absolute;
     grid-row: 6;
     grid-column: 3;
     width: 150px;
@@ -93,8 +94,14 @@ p {
     background-color: red;
 }
 
-.container:nth-child(4) {
-   grid-area: 3 / 3 / 4 / 4;
+.container {
+    display: grid;
+    position: absolute;
+    grid-template-rows: 100px 100px 150px 150px 150px 150px 150px;     
+    grid-template-columns: 150px 150px 150px 150px 150px;     
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 .triangle-red {
