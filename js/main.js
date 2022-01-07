@@ -136,6 +136,7 @@ function computerTurn() {
     playerSequence = [];
     computerSequence.push(Math.floor(Math.random() * 4));
     messageBox.innerHTML = "(ㆆ_ㆆ)"
+    messageBox.style.fontSize = '22px'
     render();
 }
 
