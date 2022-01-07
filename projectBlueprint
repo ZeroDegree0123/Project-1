@@ -30,7 +30,7 @@
 3. ColorButtons
     a. buttons will be divs shaped like triangles
     b. buttons will be different colors with unique tones
-    c. will be placed below title
+    c. have hover effect 
 
 4. PLAY MENU/BOARD
     a. board will have a square center with a triangle on each side pointing outwards

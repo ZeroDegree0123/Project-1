@@ -72,8 +72,8 @@ document.querySelector('.container')
         const buttonIndex = lightEls.indexOf(button);
         if (buttonIndex === -1) return;
         playerSequence.push(buttonIndex);
-        lightEls[buttonIndex].classList.add('light');
         soundClips[buttonIndex].play();
+        lightEls[buttonIndex].classList.add('light');
         setTimeout(function() {
             if (!result) lightEls[buttonIndex].classList.remove('light');
         }, 200);
@@ -110,7 +110,7 @@ function render() {
       const btn = lightEls[computerSequence[idx]];
       btn.classList.add('light');
       setTimeout(function() {
-        btn.classList.remove('light')
+      btn.classList.remove('light')
       }, LIT_TIME);
       idx++;
       if (idx === computerSequence.length) {
