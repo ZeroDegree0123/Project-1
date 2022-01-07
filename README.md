@@ -1,4 +1,4 @@
-# Simon 
+# Simon Says
 
 This game displays a set of colors by a computer and the players objective is to mimic and select the same colors the computer does. If the player does not select the correct sequence the computer made then the player fails.
     
