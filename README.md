@@ -19,7 +19,7 @@ This game displays a set of colors by a computer and the players objective is to
  Push the 'start' button to begin the game. Once the game is started the computer will begin its first sequence, which starts with one color. Each turn of the computer will add one more move to its sequence. Select the same color as the computer did and make the same sequence as the computers. If you don't make the same sequence you loose.
 
  ### Game Link
-[Click To Play My Game](https://zerodegree0123.github.io/Project-1/)
+[Click To Play My Game](https://ZeroDegree0123.github.io/SimonSays/)
 
 ## Next Steps 
 
