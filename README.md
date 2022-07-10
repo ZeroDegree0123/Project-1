@@ -27,4 +27,4 @@ This game displays a set of colors by a computer and the players objective is to
  adding multiple levels, which inlcudes more colors to remember,
  different stages that change according to the new level.
  New stages will have there own theme, background and soundtrack will change.
- Add a winner condition, where theres a goal for the player to reach.
+ Add a winner condition, where theres a goal for the player to reach. 
