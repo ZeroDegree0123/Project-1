@@ -16,10 +16,9 @@ let gameInPlay; // true when computer makes move
 
 
 /*----- cached element references -----*/
-const lightEls = Array.from(document.querySelectorAll('div > div'));
+const lightEls = Array.from(document.querySelectorAll('div'));
 const addedText = document.querySelector('span')
 const startButton = document.querySelector('button');
-
 const messageBox = document.querySelector('p');
 
 
@@ -65,7 +64,7 @@ startButton.addEventListener('click', function() {
     computerTurn();
 });
 
-document.querySelector('.container')
+document.querySelector('.game-container')
     .addEventListener('click', function(evt) {
         if (!start || gameInPlay) return;
         const button = evt.target;
